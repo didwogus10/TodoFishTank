@@ -31,5 +31,6 @@ struct TodoListView: View {
 
 #Preview {
     NavigationStack{
-        TodoListView()}
+        TodoListView()
+    }.environmentObject(TodoViewModel(todoService: TodoService()))
 }
