@@ -15,7 +15,7 @@ struct EditTodoView: View {
     @State private var isShowAlert : Bool = false
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Form {
                 Section("할 일 이름") {
                     TextField("텍스트를 입력하세요...", text : $todo.title)
@@ -40,46 +40,46 @@ struct EditTodoView: View {
                     }
             }
             
-        }
-        Button(action: {
-            Task{
-                try await todoViewModel.updateTodo(todo: todo)}
-            dismiss()
-        }) {
-            ZStack {
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(height: 94)
-                    .background(
-                        LinearGradient.categoryBadge
-                    )
-                
-                Text("편집하기")
-                    .font(
-                        Font.system(size: 19)
-                            .weight(.bold)
-                    )
-                    .foregroundColor(.white)
+            
+            Button(action: {
+                Task{
+                    try await todoViewModel.updateTodo(todo: todo)}
+                dismiss()
+            }) {
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(height: 70)
+                        .background(
+                            LinearGradient.categoryBadge
+                        )
+                    
+                    Text("편집하기")
+                        .font(
+                            Font.system(size: 19)
+                                .weight(.bold)
+                        )
+                        .foregroundColor(.white)
+                }
             }
-        }
-        .disabled(todo.title.isEmpty) // 입력이 없으면 비활성화
-        .opacity(todo.title.isEmpty ? 0.5 : 1)
+            .disabled(todo.title.isEmpty) // 입력이 없으면 비활성화
+            .opacity(todo.title.isEmpty ? 0.5 : 1)
+            
+            .navigationTitle("할 일 편집하기") //타이틀
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Image(systemName: "chevron.backward")
+                            .foregroundStyle(.black)
+                    })
+                }}
+        } // 비활성화 상태에 따라 투명도 조정
         
-        .navigationTitle("할 일 편집하기") //타이틀
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar{
-            ToolbarItemGroup(placement: .topBarLeading) {
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    Image(systemName: "chevron.backward")
-                        .foregroundStyle(.black)
-                })
-            }}
-    } // 비활성화 상태에 따라 투명도 조정
-    
-    
+    }
 }
 
 
@@ -87,7 +87,7 @@ struct EditTodoView: View {
 
 
 #Preview {
-            @Previewable @State var sampleTodoItem = Todo(title: "string", isComplete: false)
+    @Previewable @State var sampleTodoItem = Todo(title: "string", isComplete: false)
     EditTodoView(todo: $sampleTodoItem)
         .environmentObject(TodoViewModel(todoService: TodoService()))
 }

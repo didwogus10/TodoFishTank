@@ -1,20 +1,20 @@
 import SwiftUI
 
 struct AddCategoryButton: View {
-
+    
     var body: some View {
-        
-            NavigationLink(destination: AddCategoryView()) {
-                Text("+")
-                    .font(.system(size: 32))
-                    .fontWeight(.light)
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 5)
-                    .background( LinearGradient.categoryBadge)
-                    .foregroundColor(.white)
-                    .cornerRadius(15)
+        NavigationLink(destination: AddCategoryView()) {
+            ZStack() {
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(LinearGradient.categoryBadge)
+                    .frame(width: 38, height: 38)
+                
+                Image(systemName: "plus")
+                    .resizable()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(.white)     
             }
-        
+        }
     }
 }
 

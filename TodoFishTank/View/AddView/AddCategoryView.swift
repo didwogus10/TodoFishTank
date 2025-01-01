@@ -14,7 +14,7 @@ struct AddCategoryView: View {
     @EnvironmentObject var todoViewModel: TodoViewModel
     @State private var categoryName = ""
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Form {
                 Section("카테고리 이름") {
                     
@@ -31,7 +31,7 @@ struct AddCategoryView: View {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(height: 94)
+                        .frame(height: 70)
                         .background(
                             LinearGradient.categoryBadge
                         )
