@@ -10,24 +10,21 @@ import SwiftUI
 struct ShopCategoryRow: View {
     @EnvironmentObject var shopViewModel: ShopViewModel
     var body: some View {
-        HStack () {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(shopCategories) { category in
-                        ShopCategoryBadge( category : category,
-                                           isSelected: shopViewModel.selectedCategory == category.id
-                        )
-                        .onTapGesture {
-                            shopViewModel.selectedCategory = category.id
-                        }
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(shopCategories) { category in
+                    ShopCategoryBadge( category : category,
+                                       isSelected: shopViewModel.selectedCategory == category.id
+                    )
+                    .onTapGesture {
+                        shopViewModel.selectedCategory = category.id
                     }
-                    .padding(.trailing, 7)
                 }
-                .padding(.vertical, 1)
+                .padding(.trailing, 7)
             }
-            
-            
+            .padding(.vertical, 1)
         }
+        .scrollClipDisabled()
     }
 }
 
