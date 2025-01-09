@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1011E6EE2D2BB0F400FD558D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1011E6ED2D2BB0F400FD558D /* Lottie */; };
+		101EF0D62D2BB1D700E1899E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 101EF0D52D2BB1D700E1899E /* Lottie */; };
+		10230B662D2BACB0000F9849 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10230B652D2BACB0000F9849 /* Lottie */; };
+		10230B742D2BAF28000F9849 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10230B732D2BAF28000F9849 /* Lottie */; };
+		10230B782D2BAF9C000F9849 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10230B772D2BAF9C000F9849 /* Lottie */; };
+		10230B7C2D2BB016000F9849 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 10230B7B2D2BB016000F9849 /* Lottie */; };
 		103044A82CE77E2D00349443 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 103044A72CE77E2D00349443 /* KakaoSDK */; };
 		103044B52CE836BD00349443 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 103044B42CE836BD00349443 /* FirebaseAnalytics */; };
 		103044B72CE8398100349443 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 103044B62CE8398100349443 /* FirebaseAuth */; };
@@ -17,9 +23,23 @@
 		103045352CFEC63700349443 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 103045342CFEC63700349443 /* FirebaseAnalytics */; };
 		103045372CFEC63700349443 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 103045362CFEC63700349443 /* FirebaseAnalyticsOnDeviceConversion */; };
 		103045392CFEC63700349443 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 103045382CFEC63700349443 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		1052F3882D2BB51E003A12DD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1052F3872D2BB51E003A12DD /* Lottie */; };
 		105B466A2C92B6E900589DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105B46692C92B6E900589DD0 /* Assets.xcassets */; };
 		105B466D2C92B6E900589DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105B466C2C92B6E900589DD0 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1052F38C2D2BBC5A003A12DD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		103044EC2CF2CBEF00349443 /* TodoFishTank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoFishTank.entitlements; sourceTree = "<group>"; };
@@ -41,12 +61,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10230B742D2BAF28000F9849 /* Lottie in Frameworks */,
 				103044F12CF2DCD100349443 /* GoogleSignIn in Frameworks */,
 				103045392CFEC63700349443 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				103044B52CE836BD00349443 /* FirebaseAnalytics in Frameworks */,
 				103045352CFEC63700349443 /* FirebaseAnalytics in Frameworks */,
+				10230B7C2D2BB016000F9849 /* Lottie in Frameworks */,
+				10230B782D2BAF9C000F9849 /* Lottie in Frameworks */,
 				103044CE2CE8CEBB00349443 /* FirebaseFirestore in Frameworks */,
+				1011E6EE2D2BB0F400FD558D /* Lottie in Frameworks */,
 				103045372CFEC63700349443 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				10230B662D2BACB0000F9849 /* Lottie in Frameworks */,
+				101EF0D62D2BB1D700E1899E /* Lottie in Frameworks */,
+				1052F3882D2BB51E003A12DD /* Lottie in Frameworks */,
 				103044F32CF2DCD100349443 /* GoogleSignInSwift in Frameworks */,
 				103044FD2CF2EEC100349443 /* FirebaseCore in Frameworks */,
 				103044B72CE8398100349443 /* FirebaseAuth in Frameworks */,
@@ -57,10 +84,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1052F38D2D2BBCC5003A12DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		105B46592C92B6E800589DD0 = {
 			isa = PBXGroup;
 			children = (
 				105B46642C92B6E800589DD0 /* TodoFishTank */,
+				1052F38D2D2BBCC5003A12DD /* Frameworks */,
 				105B46632C92B6E800589DD0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +141,7 @@
 				105B465E2C92B6E800589DD0 /* Sources */,
 				105B465F2C92B6E800589DD0 /* Frameworks */,
 				105B46602C92B6E800589DD0 /* Resources */,
+				1052F38C2D2BBC5A003A12DD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +187,7 @@
 				103044A62CE77E2D00349443 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				103044B32CE836BD00349443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				103044EF2CF2DCD000349443 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				1052F3862D2BB51E003A12DD /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 105B46632C92B6E800589DD0 /* Products */;
 			projectDirPath = "";
@@ -409,6 +446,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1011E6EC2D2BB0F400FD558D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
+		101EF0D42D2BB1D700E1899E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		10230B642D2BACB0000F9849 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
 		103044A62CE77E2D00349443 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
@@ -433,9 +494,46 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		1052F3862D2BB51E003A12DD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1011E6ED2D2BB0F400FD558D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1011E6EC2D2BB0F400FD558D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		101EF0D52D2BB1D700E1899E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 101EF0D42D2BB1D700E1899E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		10230B652D2BACB0000F9849 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10230B642D2BACB0000F9849 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		10230B732D2BAF28000F9849 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10230B642D2BACB0000F9849 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		10230B772D2BAF9C000F9849 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10230B642D2BACB0000F9849 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		10230B7B2D2BB016000F9849 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Lottie;
+		};
 		103044A72CE77E2D00349443 /* KakaoSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 103044A62CE77E2D00349443 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
@@ -485,6 +583,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 103044B32CE836BD00349443 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		1052F3872D2BB51E003A12DD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1052F3862D2BB51E003A12DD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
