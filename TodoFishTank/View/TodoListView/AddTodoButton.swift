@@ -12,24 +12,17 @@ struct AddTodoButton: View {
     var body: some View {
         HStack(spacing: 26) {
             NavigationLink(destination: AddTodoView())  {
-                
                 ZStack {
-                    Rectangle()
-                        .foregroundColor(.clear)
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(LinearGradient.categoryBadge)
                         .frame(width: 22, height: 22)
-                        .background(
-                            LinearGradient.categoryBadge)
-                        .cornerRadius(5)
                     
-                    Text("+") // Rectangle 내부에 텍스트 추가
-                        .font(.system(size: 17))
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 10, height: 10)
                         .foregroundColor(.white)
                 }
-                
-                
-                
             }
-            
             Text("할 일 추가하기")
                 .font(.system(size: 17))
         }

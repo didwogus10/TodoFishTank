@@ -13,23 +13,23 @@ struct AddTodoView: View {
     @EnvironmentObject var userViewModel: UserViewModel
     @EnvironmentObject var todoViewModel: TodoViewModel
     @State private var title = ""
-//    @State private var isHighlight = false
+    //    @State private var isHighlight = false
     @State private var selectedTime = Date()
     
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Form {
                 Section("할 일 이름") {
                     TextField("텍스트를 입력하세요...", text : $title)
                     
                 }
-//                Section("할 일 설정") {
-//                    DatePicker("언제까지 할래요?", selection: $selectedTime,
-//                               displayedComponents: .hourAndMinute)
-//                    Toggle(isOn: $isHighlight) {
-//                        Text("형광펜")
-//                    }}
+                //                Section("할 일 설정") {
+                //                    DatePicker("언제까지 할래요?", selection: $selectedTime,
+                //                               displayedComponents: .hourAndMinute)
+                //                    Toggle(isOn: $isHighlight) {
+                //                        Text("형광펜")
+                //                    }}
                 
             }
             Button(action: {
@@ -38,10 +38,10 @@ struct AddTodoView: View {
                 
                 dismiss()
             }) {
-                ZStack {
+                ZStack(alignment: .center) {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(height: 94)
+                        .frame(height: 70)
                         .background(
                             LinearGradient.categoryBadge
                         )
@@ -72,10 +72,6 @@ struct AddTodoView: View {
                         .foregroundStyle(.black)
                 })
             }}}
-        
-    
-    
-    
 }
 
 

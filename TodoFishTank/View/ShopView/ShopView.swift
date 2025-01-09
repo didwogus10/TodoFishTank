@@ -20,8 +20,16 @@ struct ShopView: View {
         ZStack {
             VStack {
                 HStack{
+                    
+                    if shopViewModel.isEditMode
+                    {
+                        Button("shop") {
+                            shopViewModel.isEditMode.toggle()
+                        }.foregroundColor(.red)
+                    }
+                    
                     Spacer()
-                    Button(shopViewModel.isEditMode ? "저장" : "꾸미기") {
+                    Button(shopViewModel.isEditMode ? "저장" : "내 아이템") {
                         Task {
                             if shopViewModel.isEditMode {
                                 // 편집 모드에서 빠져나갈 때 업데이트 수행
@@ -30,11 +38,11 @@ struct ShopView: View {
                             shopViewModel.isEditMode.toggle()
                             shopViewModel.selectedItem = nil
                         }
-                    }
+                    }.foregroundColor(.black)
+                    
+                    
                 }.zIndex(1)
                 Spacer()
-
-                    
                     ZStack {
                         FishImage(isFixed: shopViewModel.isEditMode ? false : true)
                             .frame(height: UIScreen.main.bounds.height / 3)
@@ -43,7 +51,6 @@ struct ShopView: View {
                         
                             ItemImage(accumulatedOffset: $accumulatedOffset, magnifyBy: $magnifyBy, path: shopItem.path)
                                 .frame(height: UIScreen.main.bounds.height / 3)
-                            
                         }
                     }
                 
@@ -53,7 +60,10 @@ struct ShopView: View {
                     
                     Button("구매") {
                         isShowAlertBuy = true
-                    } .alert("구매하기", isPresented: $isShowAlertBuy) {
+                        
+                    }
+                    .foregroundColor(.black)
+                    .alert("구매하기", isPresented: $isShowAlertBuy) {
                         Button("취소") { }
                         Button("확인") {
                             Task{
@@ -87,16 +97,31 @@ struct ShopView: View {
                 if !shopViewModel.isEditMode{
                     ShopCategoryRow()
                 }
-                
                 ShopGrid()
-                
-                
             }
             
         }
         
         .background(Background())
         .padding()
+        
+        .navigationBarBackButtonHidden(true)
+        .toolbar{
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "chevron.backward")
+                        .foregroundStyle(.black)
+                })
+                //수정된 내용이 있어요! 저장할까요 ?
+                
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Badge(circleColor: .yellow, text: "\(userViewModel.user?.point ?? 0)p")
+            }
+        }
+
         
     }
     
